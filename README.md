@@ -28,10 +28,10 @@ En los últimos años, las redes neuronales profundas se han convertido en herra
 | Actividad    |  Link| 
 | ------------- | --------- | 
 | Taller teórico: conceptos básicos y aplicaciones | [Link](https://github.com/dortiz5/ihealth-pinns-mini-course/blob/main/slides/taller_teorico.pdf) | 
-| Lect 1 – Introducción a las PINNs: sistema masa–resorte amortiguado  | [![Activity 1](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dortiz5/ihealth-pinns-mini-course/blob/main/notebooks/Lect%201%20-%20PINN%20Mass%20-%20spring-%20damper.ipynb?authuser=2) |
-| Lect 2 – ANN vs PINNs: modelo del péndulo no lineal | [![Activity 2](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dortiz5/ihealth-pinns-mini-course/blob/main/notebooks/Lect%202%20-%20ANN%20Vs%20PINN%20-%20pendulum.ipynb?authuser=2) |
-| Lect 3 – PINNs 2D: difusión directa |  [![Activity 3](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dortiz5/ihealth-pinns-mini-course/blob/main/notebooks/Lect%203%20-%202D%20PINNS%20diffusion%20-%20direct.ipynb?authuser=2) |
-| Lect 4 – PINNs 2D: difusión inversa | [![Activity 4](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dortiz5/ihealth-pinns-mini-course/blob/main/notebooks/Lect%204%20-%202D%20PINNS%20diffusion%20-%20inverse%20copy.ipynb?authuser=2) |
+| Lect 1 – Introducción a las PINNs: sistema masa–resorte amortiguado  | [![Activity 1](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AppliedMechanics-EAFIT/sciml-workshop/blob/main/notebooks/Lect%201%20-%20PINN%20Mass%20-%20spring-%20damper.ipynb) |
+| Lect 2 – ANN vs PINNs: modelo del péndulo no lineal | [![Activity 2](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AppliedMechanics-EAFIT/sciml-workshop/blob/main/notebooks/Lect%202%20-%20ANN%20Vs%20PINN%20-%20pendulum.ipynb) |
+| Lect 3 – PINNs 2D: difusión directa |  [![Activity 3](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AppliedMechanics-EAFIT/sciml-workshop/blob/main/notebooks/Lect%203%20-%202D%20PINNS%20diffusion%20-%20direct.ipynb) |
+| Lect 4 – PINNs 2D: difusión inversa | [![Activity 4](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AppliedMechanics-EAFIT/sciml-workshop/blob/main/notebooks/Lect%204%20-%202D%20PINNS%20diffusion%20-%20inverse.ipynb) |
 | Lect 5 – Temas avanzados en PINNS | TBA |
 
 </center>
