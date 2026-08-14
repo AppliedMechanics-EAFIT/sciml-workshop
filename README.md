@@ -9,87 +9,32 @@ Este repositorio contiene material sobre redes neuronales informadas por la fís
 (PINNs, del inglés Physics-Informed Neural Newtorks) y está pensado para un taller
 en el marco del SciML Medellín 2026 realizado en la Universidad EAFIT.
 
-Diapositivas: TODO
-
 ## Contenido
 
  1. [Motivación](#motivación)
- 2. [Instalación](#instrucciones-de-instalación)
- 3. [Comprobando la instalación](#comprobando-la-instalación)
- 4. [Referencias](#referencias)
- 5. [Licencia](#licencia)
+ 2. [Contenido](#contenido-del-minicurso)
+ 2. [Referencias](#material-relacionado-y-algunas-referencias)
+ 3. [Licencia](#licencia)
+ 4. [Agradecimientos](#agradecimientos)
 
+## Motivación
 
+En los últimos años, las redes neuronales profundas se han convertido en herramientas fundamentales para la modelación y el análisis de datos complejos en espacios de alta dimensionalidad. No obstante, estas técnicas suelen requerir grandes volúmenes de datos para ajustar sus numerosos parámetros, lo cual no siempre es viable en situaciones donde la disponibilidad de datos es limitada. Para abordar este desafío, se han desarrollado métodos innovadores, como las Redes Neuronales Informadas por Física (PINNs), que combinan el aprendizaje profundo con la información física del problema a resolver. Basadas en el teorema de aproximación universal, estas redes son capaces de aproximar funciones no lineales complejas bajo ciertas arquitecturas [(Hornik, 1991)](https://www.sciencedirect.com/science/article/pii/089360809190009T?via%3Dihub), [(Barron, 1993)](https://ieeexplore.ieee.org/document/256500), [(Villota, 2019)](https://investigacion.unirioja.es/documentos/5fbf7e47299952682503c2fa/). Adicionalmente, el uso de diferenciación automática [(Baydin *et al.*, 2018)](https://arxiv.org/abs/1502.05767) permite que las PINNs resuelvan modelos físicos complejos sin la necesidad de grandes cantidades de datos. Esta integración de información adicional facilita la optimización del modelo, permitiendo un mayor nivel de precisión y robustez en aplicaciones donde los datos disponibles son escasos [(Raissi *et al.*, 2019)](https://www.sciencedirect.com/science/article/pii/S0021999118307125), [(Karniadakis *et al.*, 2021)](https://www.nature.com/articles/s42254-021-00314-5).
 
-## Instalación y configuración
-Hay dos opciones para participar en este taller, con las instrucciones que figuran a continuación:
+## Contenido del minicurso
 
- - en [Google Colab](#google-colab)
- - via [Instalación local](#Instalación-local) (recomendada)
+<center>
 
-### Google Colab
-Para iniciar los cuadernos en Google Colab haz clic en los siguientes enlaces para cada uno de los ejercicios:
+| Actividad    |  Link| 
+| ------------- | --------- | 
+| Taller teórico: conceptos básicos y aplicaciones | [Link](https://github.com/dortiz5/ihealth-pinns-mini-course/blob/main/slides/taller_teorico.pdf) | 
+| Lect 1 – Introducción a las PINNs: sistema masa–resorte amortiguado  | [![Activity 1](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dortiz5/ihealth-pinns-mini-course/blob/main/notebooks/Lect%201%20-%20PINN%20Mass%20-%20spring-%20damper.ipynb?authuser=2) |
+| Lect 2 – ANN vs PINNs: modelo del péndulo no lineal | [![Activity 2](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dortiz5/ihealth-pinns-mini-course/blob/main/notebooks/Lect%202%20-%20ANN%20Vs%20PINN%20-%20pendulum.ipynb?authuser=2) |
+| Lect 3 – PINNs 2D: difusión directa |  [![Activity 3](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dortiz5/ihealth-pinns-mini-course/blob/main/notebooks/Lect%203%20-%202D%20PINNS%20diffusion%20-%20direct.ipynb?authuser=2) |
+| Lect 4 – PINNs 2D: difusión inversa | [![Activity 4](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dortiz5/ihealth-pinns-mini-course/blob/main/notebooks/Lect%204%20-%202D%20PINNS%20diffusion%20-%20inverse%20copy.ipynb?authuser=2) |
+| Lect 5 – Temas avanzados en PINNS | TBA |
 
-_**Notas importantes:**_
-* _Para ejecutar en Google Colab necesitas tener una cuenta de Google._
-* _**Si abandonas una sesión en Colab, tu trabajo se perderá, así que asegúrate de guardar cualquier avance que desees conservar.**_
-
-
-### Instalación local
-Recomendamos usar ``conda`` para instalar los paquetes necesarios para
-este tutorial.
-
-<details>
-<summary> <samp>&#9776;  Instalación `Miniconda`</samp></summary>
- 
-Instalar conda es fácil y funciona en *Windows, macOS y Linux*. Solo tienes que seguir las [instrucciones](https://docs.anaconda.com/free/miniconda/miniconda-install/) en el sitio web. **¡Asegúrate de probar tu instalación!**
-
-</details>
-
-
-<details>
-<summary> <samp>&#9776;  Clona o haz un fork del repositorio</samp></summary>
-Dirígete al directorio donde deseas instalar este repositorio en tu sistema y clónalo vía https ejecutando:
- 
-```
-git clone https://github.com/dortiz5/ihealth-pinns-mini-course.git
-```
-
-Esto creará un directorio `ihealth-pinns-mini-course/` con el contenido de este repositorio.  
-
-Ten en cuenta que si tienes una cuenta de GitHub y deseas guardar tu trabajo, te recomendamos [hacer un fork del repositorio](https://github.com/dortiz5/ihealth-pinns-summer-school/fork) y clonar tu fork. Esto te permitirá enviar tus cambios y progresos de vuelta a tu fork para futuras referencias.
-</details>
-
-
-#### 1. Crear el ambiente utilizando `conda`
-**Asegúrate de tener conda instalado**. Este proyecto incluye un archivo [`pinns-tutorial.yml`](pinns-tutorial.yml) para crear e instalar el entorno `python3`.
-
-Desde el directorio raíz `ihealth-pinns-mini-course/`, abre el *Anaconda Prompt* en _Windows_, o en la *terminal* en macOS y Linux, y ejecuta el siguiente código:
-
-```console
-conda env create -f pinns-tutorial.yml
-```
-
-Esto creará un entorno `conda` llamado `pinns-tutorial`. Para activarlo sólo tienes que ejecutar
-
-```console
-conda activate pinns-tutorial
-```
-
-#### 2. Ejecuta el notebook
-
-Desde el directorio actual, inicia el servidor de jupyter notebook:
-```
-jupyter lab
-```
-
-Este comando debería llevarte a la ubicación correcta dentro de tu navegador para usar el notebook, típicamente [http://localhost:8888/](http://localhost:8888/).
-
-El siguiente paso a veces es útil si tienes problemas con tu jupyter notebook al encontrar el entorno. Querrás hacer esto antes de iniciar el jupyter notebook.
-
-```
-python -m ipykernel install --user --name=pinns-tutorial
-```
+</center>
 
 
 ## Material relacionado y algunas referencias:
