@@ -183,6 +183,7 @@ u_true = analytic_diffusion(x_np,t_np).reshape(1, -1)
 u_observ = u_true + np.random.normal(0,0.01,len(x_np))
 # Convertir observaciones a torch
 u_observ_t = torch.tensor(u_observ, requires_grad = True).float().reshape(-1,1)
+
 # %%
 # Definir clase de red neuronal con capas y neuronas especificadas por usuario
 class NeuralNetwork(nn.Module):
@@ -210,31 +211,7 @@ class NeuralNetwork(nn.Module):
     def forward(self, x):
         return self.layers(x)
     
-#===============================================================================
-# ETAPA 3: CREACIÓN DE LA RED NEURONAL SURROGANTE 
-#===============================================================================
-torch.manual_seed(123)
 
-# hiper-parámetros de la red
-hidden_layers = [2, 10, 10, 10, 1]
-
-# Crear instancia de la NN
-u_pinn = NeuralNetwork(hidden_layers)
-nparams = sum(p.numel() for p in u_pinn.parameters() if p.requires_grad)
-print(f'Number of trainable parameters: {nparams}')
-
-#==========================================================================
-# ETAPA 6: DEFINICIÓN DEl OPTIMIZADOR
-#==========================================================================
-learning_rate = 0.001
-
-# Tratar k como parámetro entrenable
-kappa = torch.nn.Parameter(torch.ones(1, requires_grad=True)*2)
-kappas = []
-
-# Definir optimizador y agregar k
-optimizer = optim.Adam(list(u_pinn.parameters())+[kappa], lr=0.001,
-                       betas= (0.99,0.999), eps = 1e-8)
 # %%
 #===============================================================================
 # ETAPA 1: DEFINICIÓN DE LOS PARÁMETROS (MODELO FÍSICO)
